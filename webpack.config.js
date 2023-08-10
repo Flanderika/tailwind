@@ -1,11 +1,13 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: "./src/js/index.js",
   output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
     publicPath: process.env.NODE_ENV === "production" ? "/tailwind/" : "/",
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
   },
   module: {
     rules: [
@@ -21,8 +23,28 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|webp)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/img/[name][ext]",
+        },
       },
     ],
   },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/assets/img/"),
+          to: path.resolve(__dirname, "dist/assets/img/"),
+        },
+      ],
+    }),
+    new HtmlWebpackPlugin({
+      template: "index.html",
+    }),
+  ],
 };
