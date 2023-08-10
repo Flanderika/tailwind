@@ -1,0 +1,13 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon_proj1">
+<g clip-path="url(#clip0_102_130)">
+<rect width="64" height="64" rx="32" fill="#AC77AA"/>
+<path id="Vector 4" d="M0 64.1335C25 42.9668 66.8 -1.86653 34 -11.8665C-7 -24.3665 32 70.6335 51 71.1335C43.5 56.3001 48.3 26.6 73.5 23" stroke="#D19CCC" stroke-width="7"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_102_130">
+<rect width="64" height="64" rx="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>

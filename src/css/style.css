@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Nunito";
+  font-weight: 400;
+  src: url("/src/assets/fonts/Nunito-Regular.ttf");
+}
+@font-face {
+  font-family: "Nunito";
+  font-weight: 600;
+  src: url("/src/assets/fonts/Nunito-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Nunito";
+  font-weight: 700;
+  src: url("/src/assets/fonts/Nunito-Bold.ttf");
+}
+
+.swiper__button {
+  @apply absolute top-1/2 z-20 cursor-pointer flex items-center justify-center -translate-y-1/2 w-12 h-12 rounded-full border border-black-60 bg-white transition-all duration-500;
+}
+
+.swiper__curtain {
+  @apply absolute top-0 z-10 h-full w-3/12 from-backgroundTransparent to-background to-100% transition-all duration-500
+}
+
+.swiper__curtain--left {
+  @apply bg-gradient-to-l left-0
+}
+
+.swiper__curtain--right {
+  @apply bg-gradient-to-r right-0
+}
+.swiper__button.swiper-button-disabled + .swiper__curtain{
+  @apply opacity-0
+}
+.swiper__button.swiper-button-disabled {
+  @apply opacity-0 cursor-default
+}
+
+.swiper-slide {
+  height: default;
+}
