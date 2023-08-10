@@ -1,11 +1,11 @@
 const path = require("path");
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/tailwind/" : "/",
   entry: "./src/js/index.js",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: process.env.NODE_ENV === "production" ? "/tailwind/" : "/",
   },
   module: {
     rules: [
